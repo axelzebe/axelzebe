@@ -11,6 +11,26 @@ body {
   background: white;
   color: #18141c;
 }
+/* SCROLL TO TOP BUTTON */
+#myBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: lightgray; /* Set a background color */
+  color: black; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+}
+
+#myBtn:hover {
+  background-color: lightblue; /* Add a dark-grey background on hover */
+}
 /* HEADER */
 /* . is a class selector, meanwhile # is an ID selector */
 #header {
@@ -20,6 +40,7 @@ body {
   background-image: url(images/background.png);
   background-size: cover;
   background-position: center;
+  /* background-attachment: fixed; */
 }
 .container {
   /* padding: top right bottom left */
@@ -35,7 +56,7 @@ nav {
 .logo {
   width: 500px;
   margin-top: -1%;
-  margin-left: -10%;
+  margin-left: -20%;
 }
 /* you can do it like this */
 /* The main difference between the padding and margin is:
@@ -59,7 +80,7 @@ nav ul li a::after {
   content: "";
   width: 0;
   height: 3px;
-  background: #18141c;
+  background: black;
   position: absolute;
   left: 0;
   bottom: -6px;
@@ -85,6 +106,40 @@ nav ul li a:hover::after {
   color: #18141c;
 }
 
+/* STICKY NAVBAR */
+/* Style the navbar */
+#navbar {
+  overflow: visible;
+  background-color: white;
+}
+
+/* Navbar links */
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+
+/* Page content */
+.content {
+  padding: 16px;
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 60px;
+}
+
 /* ABOUT */
 #about {
   padding: 80px 0;
@@ -104,6 +159,10 @@ nav ul li a:hover::after {
 }
 .about-col-2 {
   flex-basis: 60%;
+}
+.about-col-2 p {
+  text-align: justify;
+  text-justify: inter-word;
 }
 .sub-title {
   font-size: 60px;
@@ -125,9 +184,9 @@ nav ul li a:hover::after {
   content: "";
   width: 0;
   height: 3px;
-  background: red;
+  background: black;
   position: absolute;
-  left: auto;
+  left: 0;
   bottom: -8px;
   transition: 0.5s;
 }
@@ -137,10 +196,13 @@ nav ul li a:hover::after {
 .tab-contents ul li {
   list-style: none;
   margin: 10px 0;
+  text-align: justify;
+  text-justify: inter-word;
 }
 .tab-contents ul li span {
-  color: red;
-  font-size: 14px;
+  color: black;
+  font-size: 17px;
+  font-weight: bold;
 }
 .tab-contents {
   display: none;
@@ -211,7 +273,7 @@ nav ul li a:hover::after {
 .layer {
   width: 100%;
   height: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0.6), #ff004f);
+  background: linear-gradient(rgba(0, 0, 0, 0.6), gray);
   border-radius: 10px;
   position: absolute;
   left: 0;
@@ -259,10 +321,11 @@ nav ul li a:hover::after {
   border-radius: 6px;
   text-decoration: none;
   color: black;
+  background-color: grey;
   transition: background 0.5s;
 }
 .btn:hover {
-  background: maroon;
+  background: lightblue;
 }
 
 /* CONTACT */
@@ -273,7 +336,7 @@ nav ul li a:hover::after {
   margin-top: 30px;
 }
 .contact-left p i {
-  color: maroon;
+  color: #262626;
   margin-right: 15px;
   font-size: 25px;
 }
@@ -284,17 +347,20 @@ nav ul li a:hover::after {
   text-decoration: none;
   font-size: 30px;
   margin-right: 15px;
-  color: darkblue;
+  color: #262626;
   display: inline-block;
   transition: transform 0.5s color 0.5s;
 }
 .social-icons a:hover {
-  color: black;
+  color: gray;
   transform: translateY(-5px);
 }
 .btn.btn2 {
   display: inline-block;
-  background: #ff004f;
+  background: grey;
+}
+.btn.btn2:hover {
+  background: lightblue;
 }
 .contact-right {
   flex-basis: 60%;
@@ -329,7 +395,10 @@ form .btn.btn2 {
   margin-top: 20px;
 }
 .copyright i {
-  color: #ff004f;
+  color: white;
+}
+.copyright p {
+  color: white;
 }
 
 #msg {
@@ -359,7 +428,7 @@ nav .fas {
     font-size: 25px;
   }
   nav ul {
-    background: #ff004f;
+    background: grey;
     position: fixed;
     top: 0;
     right: -200px;

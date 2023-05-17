@@ -1,5 +1,0 @@
-- Home
-- About
-- Portofolio
-- Contact
-- Download my CV here
